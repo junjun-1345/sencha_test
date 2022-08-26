@@ -1,10 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
 
-</body>
-</html>
+{% block title %}選茶 | Sencha {% endblock %}
+
+{% block contents %}
+
+<!-- section 1-->
+<div class="container text-center p-5">
+    <div class="row align-items-center">
+        <div class="col">
+        </div>
+        <h1>あなたの選んだお茶を日常に</h1>
+    </div>
+</div>
+</div>
+
+<!-- section 2-->
+
+{% endblock %}
+
+{% block header %}
+<div class="d-grid gap-2 col-6 mx-auto">
+    <a href="/diagnose/" class="btn btn-primary stretched-link">診断</a>
+</div>
+{% endblock %}
