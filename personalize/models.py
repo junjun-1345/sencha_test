@@ -26,3 +26,9 @@ class Tea(models.Model):
 
     def __int__(self):
         return self.name
+
+    def __str__(self):
+        return self.base + self.symptoms1 + self.symptoms2 + self.symptoms3 + self.symptoms4 + self.symptoms5 + \
+            self.symptoms6 + self.symptoms7 + self.symptoms8 + self.symptoms9 + self.symptoms10 + \
+            self.symptoms11 + self.symptoms12 + self.symptoms13 + self.symptoms14 + self.symptoms15
+

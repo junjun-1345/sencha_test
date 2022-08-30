@@ -13,14 +13,30 @@
         <h1>あなたの選んだお茶を日常に</h1>
     </div>
 </div>
-</div>
 
 <!-- section 2-->
+
+    <h2>お茶一覧</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>お茶名</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for tea in tea_list %}
+            <tr>
+                <td>{{ tea.name }}</td>
+            </tr>
+            <tr>
+                <td>{{ tea.base }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
 {% endblock %}
 
 {% block header %}
-<div class="d-grid gap-2 col-6 mx-auto">
-    <a href="/diagnose_list/" class="btn btn-primary stretched-link">お茶一覧</a>
-</div>
+
 {% endblock %}
