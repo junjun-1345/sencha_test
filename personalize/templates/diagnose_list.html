@@ -3,6 +3,13 @@
 
 {% block title %}選茶 | Sencha {% endblock %}
 
+
+{% block header %}
+<div class="d-grid gap-2 col-6 mx-auto">
+    <a href="/diagnose/" class="btn btn-primary stretched-link">診断</a>
+</div>
+{% endblock %}
+
 {% block contents %}
 
 <!-- section 1-->
@@ -24,7 +31,7 @@
         </tr>
         </thead>
         <tbody>
-        {% for tea in tea_list %}
+        {% for tea in object_list %}
             <tr>
                 <td>{{ tea.name }}</td>
             </tr>
@@ -37,6 +44,3 @@
 
 {% endblock %}
 
-{% block header %}
-
-{% endblock %}
