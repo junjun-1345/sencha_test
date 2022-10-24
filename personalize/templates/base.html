@@ -11,7 +11,12 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- App CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" >
+    <!-- App JS -->
+    <script src="{% static 'js/script.js' %}"></script>
+    <!-- App Jquery -->
+    <script src="{% static 'js/jquery-3.6.1.min.js' %}"></script>
+    <script src="{% static 'js/paginathing.min.js' %}"></script>
 
     {% block head %}{% endblock %}
 </head>

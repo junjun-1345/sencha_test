@@ -4,201 +4,64 @@
 {% block title %}選茶 | Sencha {% endblock %}
 
 {% block header %}
-    {% comment %}<div class="d-grid gap-2 col-6 mx-auto">
-    <a href="/diagnose_list/" class="btn btn-primary stretched-link">お茶一覧</a>
-</div>{% endcomment %}
-    診断→診断結果→ログイン有りなし→決済画面
-    選茶とは
-    一覧
-    mypage
+
 {% endblock %}
 
 {% block contents %}
-
-    <!-- section 1-->
-    <div class="container text-center">
-        <form action="" method="get">
-            <div class="row gy-5">
-                <div class="col ">
-                    <p>
-                        <label>
-                        <input type="checkbox" name="keyword" value="むくみ">
-                        </label>
-                    </p>
-                    <p>
-                        むくみ
-                    </p>
-                </div>
-                <div class="col">
-                    <p>
-                        <label>
-                        <input type="checkbox" name="keyword" value="貧血">
-                        </label>
-                    </p>
-                    <p>
-                        貧血
-                    </p>
-                </div>
-                <div class="col">
-                    <p>
-                        <label>
-                        <input type="checkbox" name="check" value="3">
-                        </label>
-                    </p>
-                    <p>
-                        チェック3
-                    </p>
-                </div>
-                <div class="col">
-                    <p>
-                        <label>
-                        <input type="checkbox" name="check" value="4">
-                        </label>
-                    </p>
-                    <p>
-                        チェック4
-                    </p>
-                </div>
-                <div class="col">
-                    <p>
-                        <label>
-                        <input type="checkbox" name="check" value="5">
-                        </label>
-                    </p>
-                    <p>
-                        チェック5
-                    </p>
-                </div>
-                <div class="w-100"></div>
-                <div class="col ">
-                    <p>
-                        <label>
-                        <input type="checkbox" name="check" value="6">
-                        </label>
-                    </p>
-                    <p>
-                        チェック6
-                    </p>
-                </div>
-                <div class="col">
-                    <p>
-                        <label>
-                        <input type="checkbox" name="check" value="7">
-                        </label>
-                    </p>
-                    <p>
-                        チェック7
-                    </p>
-                </div>
-                <div class="col">
-                    <p>
-                        <label>
-                        <input type="checkbox" name="check" value="8">
-                        </label>
-                    </p>
-                    <p>
-                        チェック8
-                    </p>
-                </div>
-                <div class="col">
-                    <p>
-                        <label>
-                        <input type="checkbox" name="check" value="9">
-                        </label>
-                    </p>
-                    <p>
-                        チェック9
-                    </p>
-                </div>
-                <div class="col">
-                    <p>
-                        <label>
-                        <input type="checkbox" name="check" value="10">
-                        </label>
-                    </p>
-                    <p>
-                        チェック10
-                    </p>
-                </div>
-                <div class="w-100"></div>
-                <div class="col">
-                    {% comment %}<input type="text" name="keyword">{% endcomment %}
-                </div>
-                <div class="col">
-                    <button type="submit" link="">検索する</button>
-                </div>
-            </div>
-
-
-        </form>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <a href="/result/" class="btn btn-primary">結果</a>
+        <p>作成者は<b id='test'>{{ num }}</b>です。</p>
     </div>
 
+    <!-- section question-->
 
-    <h2>
-    it is {{message}} .
-    </h2>
-    <h2>お茶一覧</h2>
-    <table class="table">
-        <thead>
-        <tr>
-            <th>お茶名</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for tea in object_list %}
-            <tr>
-                <td>{{ tea.name }}</td>
-            </tr>
-            <tr>
-                <td>{{ tea.base }}</td>
-            </tr>
-            <tr>
-                <td>{{ tea.symptoms1 }}</td>
-            </tr>
-            <tr>
-                <td>{{ tea.symptoms2 }}</td>
-            </tr>
-            <tr>
-                <td>{{ tea.symptoms3 }}</td>
-            </tr>
-            <tr>
-                <td>{{ tea.symptoms4 }}</td>
-            </tr>
-            <tr>
-                <td>{{ tea.symptoms5 }}</td>
-            </tr>
-            <tr>
-                <td>{{ tea.symptoms6 }}</td>
-            </tr>
-            <tr>
-                <td>{{ tea.symptoms7 }}</td>
-            </tr>
-            <tr>
-                <td>{{ tea.symptoms8 }}</td>
-            </tr>
-            <tr>
-                <td>{{ tea.symptoms9 }}</td>
-            </tr>
-            <tr>
-                <td>{{ tea.symptoms10 }}</td>
-            </tr>
-            <tr>
-                <td>{{ tea.symptoms11 }}</td>
-            </tr>
-            <tr>
-                <td>{{ tea.symptoms12 }}</td>
-            </tr>
-            <tr>
-                <td>{{ tea.symptoms13 }}</td>
-            </tr>
-            <tr>
-                <td>{{ tea.symptoms14 }}</td>
-            </tr>
-            <tr>
-                <td>{{ tea.symptoms15 }}</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <form method="POST">{% csrf_token %}
+        <div class="pagination-container">
+            <dl>
+                <dt>質問1</dt>
+                <dd>
+                    {{ form.keyword0 }}
+                    {{ form.keyword0.name }}
+                </dd>
+            </dl>
+            <dl>
+                <dt>質問2</dt>
+                <dd>
+                    {{ form.keyword1 }}
+                    {{ form.keyword1.name }}
+                </dd>
+            </dl>
+            <dl>
+                <dt>質問3</dt>
+                <dd>
+                    {{ form.keyword2 }}
+                    {{ form.keyword2.name }}
+                </dd>
+            </dl>
+            <dl>
+                <dt>質問4</dt>
+                <dd>
+                    {{ form.keyword3 }}
+                    {{ form.keyword3.name }}
+                </dd>
+            </dl>
+        </div>
+        <input type="submit" name='check' value="Send message">
+    </form>
+
+
+    <!-- section java-->
+
+    <script type="text/javascript">
+        $(function () {
+            $('.pagination-container').paginathing({//親要素のclassを記述
+                perPage: 1,//1ページあたりの表示件数
+                firstLast: false,
+                prevText: '前へ',//1つ前のページへ移動するボタンのテキスト
+                nextText: '次へ',//1つ次のページへ移動するボタンのテキスト
+                activeClass: 'active',//現在のページ番号に任意のclassを付与できます
+            })
+        });
+    </script>
 
 {% endblock %}
